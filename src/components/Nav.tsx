@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 const Nav = (props: { user: User | null }) => {
     return (
         <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-            <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+            <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Super Company SAS</a>
 
             <ul className="my-2 my-md-0 mr-md-3">
                 <Link to={'/profile'}

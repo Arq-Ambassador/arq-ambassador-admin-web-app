@@ -25,7 +25,9 @@
   },
   "scripts": {
     "start": "PORT=80 cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "startWin": "react-scripts start",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "buildWin": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
