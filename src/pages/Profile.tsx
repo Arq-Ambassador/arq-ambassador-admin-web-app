@@ -22,7 +22,8 @@ const Profile = (props: any) => {
     const infoSubmit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        const {data} = await axios.put('users/info', {
+        // const {data} = await axios.put('users/info', {
+        const {data} = await axios.put(`${process.env.ADMIN_APP_UPDATE_USER_INFO_ENDPOINT}`, {
             first_name,
             last_name,
             email
@@ -34,7 +35,8 @@ const Profile = (props: any) => {
     const passwordSubmit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        await axios.put('users/password', {
+        // await axios.put('users/password', {
+        await axios.put(`${process.env.ADMIN_APP_UPDATE_USER_PASSWORD_ENDPOINT}`, {
             password,
             password_confirm
         })

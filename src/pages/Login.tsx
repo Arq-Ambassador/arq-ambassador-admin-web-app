@@ -11,7 +11,8 @@ const Login = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        await axios.post('login', {
+        // await axios.post('login', {
+        await axios.post(`${process.env.ADMIN_APP_LOGIN_ENDPOINT}`, {
             email,
             password
         });

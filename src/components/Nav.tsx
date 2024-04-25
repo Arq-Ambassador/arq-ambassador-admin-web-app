@@ -13,7 +13,8 @@ const Nav = (props: { user: User | null }) => {
                 <Link to={'/profile'}
                       className="p-2 text-white text-decoration-none">{props.user?.first_name} {props.user?.last_name}</Link>
                 <Link to={'/login'} className="p-2 text-white text-decoration-none"
-                      onClick={async () => await axios.post('logout')}
+                      onClick={async () => await axios.post(`${process.env.ADMIN_APP_LOGOUT_ENDPOINT}`)}
+                      // onClick={async () => await axios.post('logout')}
                 >Sign out</Link>
             </ul>
         </header>

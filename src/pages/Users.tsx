@@ -21,7 +21,8 @@ const Users = () => {
     useEffect(() => {
         (
             async () => {
-                const {data} = await axios.get('ambassadors');
+                // const {data} = await axios.get('ambassadors');
+                const {data} = await axios.get(`${process.env.ADMIN_APP_GET_AMBASSADORS_ENDPOINT}`);
 
                 setUsers(data);
             }
@@ -48,7 +49,8 @@ const Users = () => {
                                 <TableCell>{user.email}</TableCell>
                                 <TableCell>
                                     <Button variant="contained" color="primary"
-                                            href={`users/${user.id}/links`}
+                                            // href={`users/${user.id}/links`}
+                                            href={`${process.env.ADMIN_APP_GET_USER_LINKS_ENDPOINT}${user.id}/links`}
                                     >View</Button>
                                 </TableCell>
                             </TableRow>

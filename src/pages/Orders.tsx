@@ -19,7 +19,8 @@ const Orders = () => {
     useEffect(() => {
         (
             async () => {
-                const {data} = await axios.get('orders');
+                // const {data} = await axios.get('orders');
+                const {data} = await axios.get(`${process.env.ADMIN_APP_ORDERS_ENDPOINT}`);
 
                 setOrders(data);
             }

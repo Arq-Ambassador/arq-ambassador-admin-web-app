@@ -22,7 +22,8 @@ const Products = () => {
     useEffect(() => {
         (
             async () => {
-                const {data} = await axios.get('products');
+                // const {data} = await axios.get('products');
+                const {data} = await axios.get(`${process.env.ADMIN_APP_GET_PRODUCTS_ENDPOINT}`);
 
                 setProducts(data);
             }

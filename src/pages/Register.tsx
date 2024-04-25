@@ -14,8 +14,8 @@ class Register extends Component {
 
     submit = async (e: SyntheticEvent) => {
         e.preventDefault();
-
-        await axios.post('register', {
+        // await axios.post('register', {
+        await axios.post(`${process.env.ADMIN_APP_REGISTER_ENDPOINT}`, {
             first_name: this.firstName,
             last_name: this.lastName,
             email: this.email,

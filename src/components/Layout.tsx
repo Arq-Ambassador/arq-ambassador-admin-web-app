@@ -14,7 +14,8 @@ const Layout = (props: any) => {
         (
             async () => {
                 try {
-                    const {data} = await axios.get('user');
+                    // const {data} = await axios.get('user');
+                    const {data} = await axios.get(`${process.env.ADMIN_APP_USER_ENDPOINT}`);
 
                     props.setUser(data);
                 } catch (e) {

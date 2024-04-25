@@ -15,7 +15,8 @@ const ProductForm = (props: any) => {
         if (props.match.params.id) {
             (
                 async () => {
-                    const {data} = await axios.get(`products/${props.match.params.id}`);
+                    // const {data} = await axios.get(`products/${props.match.params.id}`);
+                    const {data} = await axios.get(`${process.env.ADMIN_APP_CREATE_PRODUCT_ENDPOINT}${props.match.params.id}`);
 
                     setTitle(data.title);
                     setDescription(data.description);
@@ -36,7 +37,8 @@ const ProductForm = (props: any) => {
         };
 
         if (props.match.params.id) {
-            await axios.put(`products/${props.match.params.id}`, data);
+            // await axios.put(`products/${props.match.params.id}`, data);
+            await axios.put(`${process.env.ADMIN_APP_UPDATE_PRODUCT_ENDPOINT}${props.match.params.id}`, data);
         } else {
             await axios.post('products', data);
         }

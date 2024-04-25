@@ -12,7 +12,8 @@ const Links = (props: any) => {
     useEffect(() => {
         (
             async () => {
-                const {data} = await axios.get(`users/${props.match.params.id}/links`);
+                // const {data} = await axios.get(`users/${props.match.params.id}/links`);
+                const {data} = await axios.get(`${process.env.ADMIN_APP_GET_USER_LINKS_ENDPOINT}${props.match.params.id}/links`);
 
                 setLinks(data);
             }
