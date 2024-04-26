@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# 🛍️ **Ambassador Store Project** 
+## rq-ambassador-admin-web-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En este proyecto se toma como base los repositorios de Antonio Papa para una tienda virtual y se le hacen cambios arquitectonicos con el fin de mejorar su disponibilidad ante fallas, simulando un despliegue de una tienda en linea real con alta resiliencia, alta disponibilidad y que soporte un alto nivel de tráfico.
 
-## Available Scripts
+Este repostorio corresponde al frontend disponible para usuarios administradores.
 
-In the project directory, you can run:
+## Descripción Arquitectónica
 
-### `npm start`
+En esta arquitectura se consideran varios elementos principales:
+- FrontEnd: Dividido en 3 grandes proyectos: Store, Admin y Checkout.
+- Un API Gateway, que sirve de puente entre el front y los diferentes microservicios.
+- Un conjunto de microservicios, que cumplen las funciones de Autenticación, Manejo de Usuarios, Productos, Ordenes, Generación de Enlaces y Visualización de Rankings y un servicio core. Al igual que uno de soporte que envía los correos de confirmación y notificación.
+- Cada servicio contiene elementos necesarios para su funcionamiento, como workers, que se encargan de implementar los patrones de diseño estipulados. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Integrantes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Andrés Mauricio Ayala Cardona.
+- Sebastian Patiño Betancur.
+- Sara Rodríguez Velásquez.
 
-### `npm test`
+## Docente
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+👨‍🏫 Danny Andrés Salcedo Saldaña -  [Docente de EAFIT](https://www.linkedin.com/in/danny-andres-salcedo-salda%C3%B1a-0b07772a/?originalSubdomain=co)
 
-### `npm run build`
+## Tecnologías Utilizadas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📑 Lenguaje de Programación:
+- **TypeScript:** Extiende JavaScript con características de tipado estático opcional para ayudar a detectar errores y hacer que el código sea más robusto.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🗂️ Frameworks y Librerías:
+- **React:** Biblioteca JavaScript para construir interfaces de usuario interactivas y rápidas.
+- **Redux:** Biblioteca para gestionar el estado de la aplicación en aplicaciones JavaScript, especialmente con interfaces basadas en React.
+- **Axios:** Cliente HTTP basado en promesas para realizar solicitudes desde el navegador o Node.js y manejar respuestas de manera eficiente.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Instalación
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Instrucciones paso a paso sobre cómo instalar y configurar el proyecto localmente.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Correr localmente:
+```
+npm install
+npm run start
+```
+Crear un build
+```
+npm build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Uso
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Recuerde configurar todas las variables de entorno pertinentes para que pueda correr correctamente. 
+Para el despliegue actual se sigue un modelo de despliegue en Kubernetes, por lo cual los archivos de configuración estan orientados a esta tecnología.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Recursos Adicionales
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Proyectos originales:
+- 📌 Proyecto original de React frontend: https://github.com/antoniopapa/react-ambassador 
+- 📌 Proyecto original de Node backend: https://github.com/antoniopapa/node-ambassador
+
+## Contacto
+
+- Andrés Mauricio Ayala Cardona. amayalac@eafit.edu.co
+- Sebastian Patiño Betancur. spatinob1@eafit.edu.co
+- Sara Rodríguez Velásquez. srodriguev@eafit.edu.co
+
+
+> [!NOTE]
+> Este proyecto se ha creado con fines netamente académicos, sin fines comerciales y con un propósito de aprendizaje.
