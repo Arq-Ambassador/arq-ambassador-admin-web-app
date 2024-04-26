@@ -16,7 +16,7 @@ En esta arquitectura se consideran varios elementos principales:
 ## Integrantes
 
 - Andrés Mauricio Ayala Cardona.
-- Sebastian Patiño Betancur.
+- Santiago Patiño Betancur.
 - Sara Rodríguez Velásquez.
 
 ## Docente
@@ -63,7 +63,7 @@ Proyectos originales:
 ## Contacto
 
 - Andrés Mauricio Ayala Cardona. amayalac@eafit.edu.co
-- Sebastian Patiño Betancur. spatinob1@eafit.edu.co
+- Santiago Patiño Betancur. spatinob1@eafit.edu.co
 - Sara Rodríguez Velásquez. srodriguev@eafit.edu.co
 
 
