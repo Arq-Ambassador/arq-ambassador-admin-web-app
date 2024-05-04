@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {User} from "../models/user";
-import axios from "axios";
 import {connect} from "react-redux";
+import { authService } from '../axios/hostsInstances';
 
 const Nav = (props: { user: User | null }) => {
     return (
@@ -13,7 +13,7 @@ const Nav = (props: { user: User | null }) => {
                 <Link to={'/profile'}
                       className="p-2 text-white text-decoration-none">{props.user?.first_name} {props.user?.last_name}</Link>
                 <Link to={'/login'} className="p-2 text-white text-decoration-none"
-                      onClick={async () => await axios.post('logout')}
+                      onClick={async () => await authService.post('logout')}
                 >Sign out</Link>
             </ul>
         </header>

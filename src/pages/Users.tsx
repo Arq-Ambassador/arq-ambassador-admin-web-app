@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import Layout from "../components/Layout";
-import axios from "axios";
 import {User} from "../models/user";
 import {
     Button,
@@ -12,6 +11,7 @@ import {
     TablePagination,
     TableRow
 } from "@material-ui/core";
+import { usersService } from '../axios/hostsInstances';
 
 const Users = () => {
     const [users, setUsers] = useState<User[]>([]);
@@ -21,7 +21,7 @@ const Users = () => {
     useEffect(() => {
         (
             async () => {
-                const {data} = await axios.get('ambassadors');
+                const {data} = await usersService.get('ambassadors');
 
                 setUsers(data);
             }

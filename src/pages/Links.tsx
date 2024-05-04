@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Table, TableBody, TableCell, TableFooter, TableHead, TablePagination, TableRow} from "@material-ui/core";
 import Layout from "../components/Layout";
 import {Link} from "../models/link";
-import axios from "axios";
+import { coreService } from '../axios/hostsInstances';
 
 const Links = (props: any) => {
     const [links, setLinks] = useState<Link[]>([]);
@@ -12,7 +12,7 @@ const Links = (props: any) => {
     useEffect(() => {
         (
             async () => {
-                const {data} = await axios.get(`users/${props.match.params.id}/links`);
+                const {data} = await coreService.get(`users/${props.match.params.id}/links`);
 
                 setLinks(data);
             }

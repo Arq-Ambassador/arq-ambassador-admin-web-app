@@ -1,11 +1,11 @@
 import React, {Dispatch, useEffect, useState} from 'react';
 import Nav from "./Nav";
 import Menu from "./Menu";
-import axios from "axios";
 import {Redirect} from "react-router-dom";
 import {User} from "../models/user";
 import {connect} from "react-redux";
 import {setUser} from "../redux/actions/setUserAction";
+import { usersService } from '../axios/hostsInstances';
 
 const Layout = (props: any) => {
     const [redirect, setRedirect] = useState(false);
@@ -14,7 +14,7 @@ const Layout = (props: any) => {
         (
             async () => {
                 try {
-                    const {data} = await axios.get('user');
+                    const {data} = await usersService.get('user');
 
                     props.setUser(data);
                 } catch (e) {

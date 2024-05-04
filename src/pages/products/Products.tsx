@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {Product} from "../../models/product";
-import axios from "axios";
 import Layout from "../../components/Layout";
 import {
     Button,
@@ -13,6 +12,7 @@ import {
     TableRow
 } from "@material-ui/core";
 import {ToggleButtonGroup} from "@material-ui/lab";
+import { coreService } from '../../axios/hostsInstances';
 
 const Products = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -22,7 +22,7 @@ const Products = () => {
     useEffect(() => {
         (
             async () => {
-                const {data} = await axios.get('products');
+                const {data} = await coreService.get('products');
 
                 setProducts(data);
             }
@@ -31,7 +31,7 @@ const Products = () => {
 
     const del = async (id: number) => {
         if (window.confirm('Are you sure?')) {
-            await axios.delete(`products/${id}`);
+            await coreService.delete(`products/${id}`);
 
             setProducts(products.filter(p => p.id !== id));
         }

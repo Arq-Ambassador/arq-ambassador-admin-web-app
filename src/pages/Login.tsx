@@ -1,7 +1,8 @@
 import { SyntheticEvent, useState } from 'react';
-import '../Login.css';
-import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+
+import '../Login.css';
+import { authService } from '../axios/hostsInstances';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -11,7 +12,7 @@ const Login = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        await axios.post('login', {
+        await authService.post('login', {
             email,
             password
         });

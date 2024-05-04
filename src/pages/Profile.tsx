@@ -1,10 +1,10 @@
 import {Button, TextField} from '@material-ui/core';
 import React, {Dispatch, SyntheticEvent, useEffect, useState} from 'react';
 import Layout from "../components/Layout";
-import axios from "axios";
 import {connect} from "react-redux";
 import {User} from "../models/user";
 import {setUser} from "../redux/actions/setUserAction";
+import { usersService } from '../axios/hostsInstances';
 
 const Profile = (props: any) => {
     const [first_name, setFirstName] = useState('');
@@ -22,7 +22,7 @@ const Profile = (props: any) => {
     const infoSubmit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        const {data} = await axios.put('users/info', {
+        const {data} = await usersService.put('users/info', {
             first_name,
             last_name,
             email
@@ -34,7 +34,7 @@ const Profile = (props: any) => {
     const passwordSubmit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        await axios.put('users/password', {
+        await usersService.put('users/password', {
             password,
             password_confirm
         })

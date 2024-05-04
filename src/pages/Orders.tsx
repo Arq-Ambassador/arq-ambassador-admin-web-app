@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Layout from "../components/Layout";
 import {Order} from "../models/order";
-import axios from "axios";
 import {
     Accordion,
     AccordionDetails,
@@ -12,6 +11,7 @@ import {
     TableHead,
     TableRow
 } from "@material-ui/core";
+import { coreService } from '../axios/hostsInstances';
 
 const Orders = () => {
     const [orders, setOrders] = useState<Order[]>([]);
@@ -19,7 +19,7 @@ const Orders = () => {
     useEffect(() => {
         (
             async () => {
-                const {data} = await axios.get('orders');
+                const {data} = await coreService.get('orders');
 
                 setOrders(data);
             }

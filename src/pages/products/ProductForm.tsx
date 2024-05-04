@@ -1,8 +1,8 @@
 import React, {SyntheticEvent, useEffect, useState} from 'react';
 import Layout from "../../components/Layout";
 import {Button, TextField} from "@material-ui/core";
-import axios from "axios";
 import {Redirect} from "react-router-dom";
+import { coreService } from '../../axios/hostsInstances';
 
 const ProductForm = (props: any) => {
     const [title, setTitle] = useState('');
@@ -15,7 +15,7 @@ const ProductForm = (props: any) => {
         if (props.match.params.id) {
             (
                 async () => {
-                    const {data} = await axios.get(`products/${props.match.params.id}`);
+                    const {data} = await coreService.get(`products/${props.match.params.id}`);
 
                     setTitle(data.title);
                     setDescription(data.description);
@@ -36,9 +36,9 @@ const ProductForm = (props: any) => {
         };
 
         if (props.match.params.id) {
-            await axios.put(`products/${props.match.params.id}`, data);
+            await coreService.put(`products/${props.match.params.id}`, data);
         } else {
-            await axios.post('products', data);
+            await coreService.post('products', data);
         }
 
         setRedirect(true);
