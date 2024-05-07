@@ -15,6 +15,13 @@ const Login = () => {
         await authService.post('login', {
             email,
             password
+        }).then((authServiceResponse: any) => {
+            console.log(authServiceResponse)
+            const token = authServiceResponse?.data?.token;
+
+            sessionStorage.setItem("jwt", token);
+        }).catch(error => {
+            console.log({ error });
         });
 
         setRedirect(true);

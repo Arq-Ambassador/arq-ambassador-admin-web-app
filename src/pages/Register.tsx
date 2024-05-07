@@ -1,5 +1,4 @@
 import React, {Component, SyntheticEvent} from 'react';
-import axios from 'axios';
 import {Redirect} from 'react-router-dom';
 import { registrationExperienceService } from '../axios/hostsInstances';
 
@@ -41,35 +40,35 @@ class Register extends Component {
 
                     <div className="form-floating">
                         <input className="form-control" placeholder="First Name"
-                               onChange={e => this.firstName = e.target.value}
+                            onChange={e => this.firstName = e.target.value}
                         />
                         <label>First Name</label>
                     </div>
 
                     <div className="form-floating">
                         <input className="form-control" placeholder="Last Name"
-                               onChange={e => this.lastName = e.target.value}
+                            onChange={e => this.lastName = e.target.value}
                         />
                         <label>Last Name</label>
                     </div>
 
                     <div className="form-floating">
                         <input type="email" className="form-control" placeholder="name@example.com"
-                               onChange={e => this.email = e.target.value}
+                            onChange={e => this.email = e.target.value}
                         />
                         <label>Email address</label>
                     </div>
 
                     <div className="form-floating">
                         <input type="password" className="form-control" placeholder="Password"
-                               onChange={e => this.password = e.target.value}
+                            onChange={e => this.password = e.target.value}
                         />
                         <label>Password</label>
                     </div>
 
                     <div className="form-floating">
                         <input type="password" className="form-control" placeholder="Password Confirm"
-                               onChange={e => this.passwordConfirm = e.target.value}
+                            onChange={e => this.passwordConfirm = e.target.value}
                         />
                         <label>Password Confirm</label>
                     </div>

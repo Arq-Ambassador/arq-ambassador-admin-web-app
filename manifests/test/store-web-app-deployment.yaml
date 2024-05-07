@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-web-app
+  namespace: ambassador-test
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: admin-web-app
+  template:
+    metadata:
+      labels:
+        app: admin-web-app
+    spec:
+      containers:
+      - name: admin-web-app
+        image: ayalamac/arq-ambassador-admin-web-app:v3
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "256Mi"
+          limits:
+            cpu: "150m"
+            memory: "256Mi"
