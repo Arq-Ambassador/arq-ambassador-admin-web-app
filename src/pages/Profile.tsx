@@ -10,6 +10,7 @@ const Profile = (props: any) => {
     const [first_name, setFirstName] = useState('');
     const [last_name, setLastName] = useState('');
     const [email, setEmail] = useState('');
+    const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [password_confirm, setPasswordConfirm] = useState('');
 
@@ -17,12 +18,13 @@ const Profile = (props: any) => {
         setFirstName(props.user.first_name);
         setLastName(props.user.last_name);
         setEmail(props.user.email);
+        setId(props.user.id);
     }, [props.user]);
 
     const infoSubmit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        const {data} = await usersService.put('users/info', {
+        const {data} = await usersService.put(`users/info/${id}`, {
             first_name,
             last_name,
             email
